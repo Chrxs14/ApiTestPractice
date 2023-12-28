@@ -1,7 +1,7 @@
 package com.apiAutomationTest.Tests;
 
 import com.apiAutomationTest.Request.People;
-import com.apiAutomationTest.utils.providers.Constants;
+import com.apiAutomationTest.utils.Constants;
 import io.restassured.response.Response;
 import org.testng.ITestContext;
 import org.testng.annotations.Test;

@@ -1,4 +1,4 @@
-package com.apiAutomationTest.utils.providers;
+package com.apiAutomationTest.utils;
 
 public class Constants {
     public static final String API_URL = "https://swapi.dev/api";

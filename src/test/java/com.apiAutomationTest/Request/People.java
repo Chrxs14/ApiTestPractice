@@ -1,6 +1,6 @@
 package com.apiAutomationTest.Request;
 
-import com.apiAutomationTest.utils.providers.Constants;
+import com.apiAutomationTest.utils.Constants;
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
 import org.testng.Assert;

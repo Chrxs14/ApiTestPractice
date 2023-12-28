@@ -5,6 +5,7 @@
         <classes>
             <class name="com.apiAutomationTest.Tests.TestPeople"/>
             <class name="com.apiAutomationTest.Tests.TestMovie"/>
+            <class name="com.apiAutomationTest.Tests.TestPlanet"/>
         </classes>
     </test>
 </suite>
