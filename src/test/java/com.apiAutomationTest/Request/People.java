@@ -16,17 +16,11 @@ public class People {
     private String skinColor;
     private List<String> films;
     private Response responsePeople;
-    public Map<String, Object> getPeopleInfo(){
-        String apiUrl = Constants.API_URL;
-        String endpoint = Constants.API_URL_PEOPLE_ENDPOINT;
-        String id = "2";
 
-        this.responsePeople = RestAssured.get(apiUrl+endpoint+id);
-
-        Assert.assertEquals(responsePeople.getStatusCode(), 200);
-        System.out.println(responsePeople.jsonPath().getMap("$"));
-        return responsePeople.jsonPath().getMap("$");
+    public People() {
     }
+
+    //Response people
 
     public Response getResponse(){
         String apiUrl = Constants.API_URL;
@@ -49,15 +43,7 @@ public class People {
         responsePeople.getStatusCode();
     }
 
-    public void validateAmountOfFilms(int filmsAmount){
-        System.out.println("validateAmountOfFilms value: " + filmsAmount);
-        Assert.assertEquals(this.films.size(), filmsAmount);
-    }
-
-    public void validateSkinColor(String skinColor){
-        System.out.println("validateSkinColor value: " + skinColor);
-        Assert.assertEquals(skinColor, this.skinColor);
-    }
+    //Name
 
     public String getName() {
         return name;
@@ -67,6 +53,7 @@ public class People {
         this.name = name;
     }
 
+    //Skin
     public String getSkinColor() {
         return skinColor;
     }
@@ -75,13 +62,27 @@ public class People {
         this.skinColor = skinColor;
     }
 
-    public List<String> getAmountOfFimls() {
+    public void validateSkinColor(String skinColor){
+        System.out.println("validateSkinColor value: " + skinColor);
+        Assert.assertEquals(skinColor, this.skinColor);
+    }
+
+    //Films
+
+    public List<String> getFimls() {
         return films;
     }
 
     public void setfimls(List<String> fimls) {
         this.films = fimls;
     }
+
+    public void validateAmountOfFilms(int filmsAmount){
+        System.out.println("validateAmountOfFilms value: " + filmsAmount);
+        Assert.assertEquals(this.films.size(), filmsAmount);
+    }
+
+    //People Data
 
     public Map<String, Object> getPeopleData() {
         return peopleData;
@@ -91,6 +92,14 @@ public class People {
         this.peopleData = peopleData;
     }
 
-    public People() {
+    public Map<String, Object> getPeopleInfo(){
+        String apiUrl = Constants.API_URL;
+        String endpoint = Constants.API_URL_PEOPLE_ENDPOINT;
+        String id = "2";
+
+        this.responsePeople = RestAssured.get(apiUrl+endpoint+id);
+
+        Assert.assertEquals(responsePeople.getStatusCode(), 200);
+        return responsePeople.jsonPath().getMap("$");
     }
 }
