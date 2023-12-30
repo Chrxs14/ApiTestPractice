@@ -25,7 +25,6 @@ public class Movie {
 
         try{
             dateFormat.parse(dateFilm);
-            System.out.println("El formato es correcto.");
             isCorrect=true;
         }catch(ParseException e){
             System.out.println(e.getMessage());

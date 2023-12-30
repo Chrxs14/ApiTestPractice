@@ -39,7 +39,6 @@ public class People {
         Response responsePeople = RestAssured.get(endpoint+id);
 
         Assert.assertEquals(responsePeople.getStatusCode(), 200);
-        System.out.println("consultEndpointStatusCode value: " + responsePeople.getStatusCode());
         responsePeople.getStatusCode();
     }
 
@@ -63,7 +62,6 @@ public class People {
     }
 
     public void validateSkinColor(String skinColor){
-        System.out.println("validateSkinColor value: " + skinColor);
         Assert.assertEquals(skinColor, this.skinColor);
     }
 
@@ -78,7 +76,6 @@ public class People {
     }
 
     public void validateAmountOfFilms(int filmsAmount){
-        System.out.println("validateAmountOfFilms value: " + filmsAmount);
         Assert.assertEquals(this.films.size(), filmsAmount);
     }
 
