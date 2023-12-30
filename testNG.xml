@@ -3,9 +3,9 @@
 <suite name="Movies" verbose="1">
     <test name="Star wars Api test" group-by-instances="true">
         <classes>
-<!--            <class name="com.apiAutomationTest.Tests.TestPeople"/>-->
-<!--            <class name="com.apiAutomationTest.Tests.TestMovie"/>-->
-<!--            <class name="com.apiAutomationTest.Tests.TestPlanet"/>-->
+            <class name="com.apiAutomationTest.Tests.TestPeople"/>
+            <class name="com.apiAutomationTest.Tests.TestMovie"/>
+            <class name="com.apiAutomationTest.Tests.TestPlanet"/>
             <class name="com.apiAutomationTest.Tests.TestValidatePlanet"/>
         </classes>
     </test>
