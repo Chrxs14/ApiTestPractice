@@ -64,4 +64,9 @@ public class Movie {
     public List<String> listOPlanets(){
         return this.responseFilm.jsonPath().getList("planets");
     }
+
+    public void error404(String url){
+        this.responseFilm = RestAssured.get(url);
+        Assert.assertEquals(responseFilm.getStatusCode(),404);
+    }
 }
