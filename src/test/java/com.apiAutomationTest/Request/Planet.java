@@ -16,9 +16,10 @@ public class Planet {
 
     private Response responsePlanet;
     Gson gson = new Gson();
-    public void responsePlanets(String url){
+    public String responsePlanets(String url){
         this.responsePlanet = RestAssured.get(url);
         Assert.assertEquals(responsePlanet.getStatusCode(),200);
+        return url;
     }
 
     public void gravityValidate() throws IOException {
@@ -41,6 +42,14 @@ public class Planet {
         this.expected_terrains = jsonObject.get("expected_terrains").getAsString();
 
         Assert.assertEquals(terrains, expected_terrains);
+    }
+
+    public String getUrlResponsePlanet(){
+        return this.responsePlanet.jsonPath().get("url");
+    }
+
+    public void validatePlanet(String url, String request){
+        Assert.assertEquals(url, request);
     }
 
 }

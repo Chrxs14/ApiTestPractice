@@ -15,7 +15,7 @@ public class TestPeople{
     private String peopleEndpoint = Constants.API_URL_PEOPLE_ENDPOINT;
     private Map<String, Object> peopleBody;
 
-    @Test(description = "Request /people/2")
+    @Test
     public void peopleTest(ITestContext context) throws IOException {
         people.consultEndpointStatusCode(apiUrl+peopleEndpoint, "2");
         Response response = people.getResponse();

@@ -102,4 +102,15 @@ public class People {
         Assert.assertEquals(responsePeople.getStatusCode(), 200);
         return responsePeople.jsonPath().getMap("$");
     }
+
+    public List<String> listOfFilms(){
+        String apiUrl = Constants.API_URL;
+        String endpoint = Constants.API_URL_PEOPLE_ENDPOINT;
+        String id = "2";
+
+        this.responsePeople = RestAssured.get(apiUrl+endpoint+id);
+
+        Assert.assertEquals(responsePeople.getStatusCode(), 200);
+        return responsePeople.jsonPath().getList("films");
+    }
 }

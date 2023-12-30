@@ -11,9 +11,10 @@ import java.util.List;
 public class Movie {
     private Response responseFilm;
 
-    public void responseFilms(String url){
+    public Response responseFilms(String url){
         this.responseFilm = RestAssured.get(url);
         Assert.assertEquals(responseFilm.getStatusCode(),200);
+        return responseFilm;
     }
 
     public void dateValidator(){
@@ -58,5 +59,9 @@ public class Movie {
         List<String> planets = responseFilm.jsonPath().getList("planets");
         Assert.assertFalse(planets.isEmpty());
         return planets;
+    }
+
+    public List<String> listOPlanets(){
+        return this.responseFilm.jsonPath().getList("planets");
     }
 }
